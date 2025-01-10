@@ -24,8 +24,10 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func HomePostHandler(w http.ResponseWriter, r *http.Request) {
-	log.Print("HTMX Request received")
-	log.Print(r.Header.Get("HX-Request"))
+	log.Print("HTMX Received")
+	log.Print(r.Method)
+	//title := r.PostFormValue("title")
+	//director := r.PostFormValue("director")
 }
 
 func main() {

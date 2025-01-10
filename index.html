@@ -12,7 +12,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">BDres Portfolio</a>
+            <a class="navbar-brand" href="#">Bob's Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,6 +36,7 @@
     </nav>
 
     <!-- Main Content -->
+    <div class="movies"></div>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Welcome to My Portfolio</h1>
         <div class="row justify-content-center">
@@ -43,9 +44,7 @@
                 <h2>Movies</h2>
                 <ul class="list-group">
                     {{ range .Movies }}
-                    <li class="list-group-item">
-                        <strong>{{ .Title }}</strong> - Directed by {{ .Director }}
-                    </li>
+                    <li class="list-group-item">{{ .Title }} - Directed by {{ .Director }}</li>
                     {{ end }}
                 </ul>
             </div>
@@ -54,8 +53,8 @@
 
 
     <!-- Adding new Movies form-->
-    <div class="d-flex justify-content-center align-items-center">
-        <div class="container" style="max-width: 500px;">
+    <div class="d-container mt-5 justify-content-center align-items-center">
+        <div class="row justify-content-center=">
             <h3>Add Movies</h3>
             <form hx-post="/add-post/" class="text-center">
                 <div class="mb-3">
