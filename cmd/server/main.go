@@ -1,19 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"net"
-	"os"
+	"log"
+	"net/http"
+
+	"BDres.com/m/internal/handlers"
 )
 
 func main() {
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "6969"
-	}
+	mux := http.NewServeMux()
 
-	host, err := net.DialTCP("tcp", nil, nil)
-	temp := host.LocalAddr().String()
-	fmt.Printf(temp, err)
-	fmt.Printf("Starting listening on port %s ...", port)
+	fs := http.FileServer(http.Dir("internal/static"))
+	mux.Handle("/static/", http.StripPrefix("/static", fs))
+	mux.HandleFunc("/some-htmx-endpoint", handlers.HtmxHandler)
+
+	log.Println("Server started on port 6969.")
+	if err := http.ListenAndServe(":6969", mux); err != nil {
+		log.Fatal(err)
+	}
 }
