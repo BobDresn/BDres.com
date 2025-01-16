@@ -27,7 +27,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item"></li>
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
@@ -36,11 +36,10 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="movies"></div>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Welcome to My Portfolio</h1>
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-18">
                 <h2>Movies</h2>
                 <ul class="list-group">
                     {{ range .Movies }}
@@ -53,11 +52,11 @@
 
 
     <!-- Adding new Movies form-->
-    <div class="d-container mt-5 justify-content-center align-items-center">
-        <div class="row justify-content-center=">
+    <div class="container mt-5 justify-content-center align-items-center">
+        <div class="row justify-content-center">
             <h3>Add Movies</h3>
-            <form hx-post="/add-post/" class="text-center">
-                <div class="mb-3">
+            <form hx-post="/add-post" class="text-center">
+                <div class="mb-2">
                     <label for="title">Movie Title:</label><br>
                     <input type="text" id="title" name="title"><br>
                 </div>
@@ -65,10 +64,10 @@
                     <label for="director">Director:</label><br>
                     <input type="text" id="director" name="director">
                 </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
         </div>
     </div>
 

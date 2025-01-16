@@ -23,11 +23,13 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.Execute(w, Movies)
 }
 
-func HomePostHandler(w http.ResponseWriter, r *http.Request) {
+func HomeAddPostHandler(w http.ResponseWriter, r *http.Request) {
 	log.Print("HTMX Received")
-	log.Print(r.Method)
+	log.Println(r.Header.Get("title"))
+
 	//title := r.PostFormValue("title")
 	//director := r.PostFormValue("director")
+	//fmt.Println(title, director)
 }
 
 func main() {
@@ -37,7 +39,7 @@ func main() {
 	//fs := http.FileServer(http.Dir("css"))
 
 	mux.HandleFunc("/", HomeHandler)
-	mux.HandleFunc("/add-post/", HomePostHandler)
+	mux.HandleFunc("/add-post/", HomeAddPostHandler)
 
 	log.Println("Server started on port 6969.")
 	if err := http.ListenAndServe(":6969", mux); err != nil {
