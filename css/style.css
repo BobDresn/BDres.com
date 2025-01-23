@@ -25,15 +25,8 @@ body {
     width: 100%;
 }
 
-/* Icon styling */
-.icon-stack {
-    position: relative;
-    display: inline-block;
-}
-.icon-stack svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 /* End Landing Page */
+
+a {
+    text-decoration: none;
+}
