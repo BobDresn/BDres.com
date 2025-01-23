@@ -1,76 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>BDres Portfolio</title>
+    <title>Bob Dresner</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--HTMX-->
+    <script src="css/assets/htmx.min.js"></script>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Bob's Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Welcome to My Portfolio</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-18">
-                <h2>Movies</h2>
-                <ul class="list-group">
-                    {{ range .Movies }}
-                    <li class="list-group-item">{{ .Title }} - Directed by {{ .Director }}</li>
-                    {{ end }}
-                </ul>
+    <!--Landing Page-->
+    <div class="landing">
+        <div class="content text-center text-uppercase text-light">
+            <p>A little about me</p>
+            <h4>Hey, thanks for checking out my page</h3>
+            <h1>These are some of my projects</h1>
+            <div class="row home justify-content-center px-md-5 px-lg-0">
+                <div class="col-3 col-sm-2 col-lg-1 p-0">
+                    <div class="icon-stack">
+                        <svg class="icon-stack icon-front" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-
-    <!-- Adding new Movies form-->
-    <div class="container mt-5 justify-content-center align-items-center">
-        <div class="row justify-content-center">
-            <h3>Add Movies</h3>
-            <form hx-post="/add-post" class="text-center">
-                <div class="mb-2">
-                    <label for="title">Movie Title:</label><br>
-                    <input type="text" id="title" name="title"><br>
-                </div>
-                <div class="mb-3">
-                    <label for="director">Director:</label><br>
-                    <input type="text" id="director" name="director">
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-5">
