@@ -13,14 +13,7 @@ type Movie struct {
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("index.html"))
-	Movies := map[string][]Movie{
-		"Movies": {
-			{Title: "Example 1", Director: "Example Director"},
-			{Title: "Example 2", Director: "Example Director"},
-			{Title: "Example 3", Director: "Example Director"},
-		},
-	}
-	tmpl.Execute(w, Movies)
+	tmpl.Execute(w, 0)
 }
 
 func HomeAddPostHandler(w http.ResponseWriter, r *http.Request) {
