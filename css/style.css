@@ -2,15 +2,18 @@
 body {
     overflow-x: hidden;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(css/assets/golangpeeking.png);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 /* Landing Page */
 .landing {
-    background-image: linear-gradient(135deg, #fc7f26, #262121);
+    background-image: linear-gradient(135deg, #fc7f26, #917b7b);
     height: 100vh;
-    background-color: black;
-    animation: fadeIn 1.5s ;
 }
 
 @keyframes fadeIn {
@@ -29,4 +32,5 @@ body {
 
 a {
     text-decoration: none;
+    text-decoration-color: black;
 }
